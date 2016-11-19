@@ -52,8 +52,13 @@ articleView.handleCategoryFilter = function() {
   #author-filter while you're at it! */
 };
 
-articleView.handleMainNav = function () {
+articleView.handleMainNav = function() {
   $('.main-nav').on('click', '.tab', function() {
+    console.log($(this));
+    $('.tab-content').hide();
+    $(`#${$(this).data('content')}`).fadeIn();
+
+
     /* TODO:
       1. Hide all of the .tab-content sections
       2. Fade in the single .tab-content section that is
@@ -80,5 +85,5 @@ articleView.setTeasers = function() {
 articleView.populateFilters();
 articleView.handleAuthorFilter();
 articleView.handleCategoryFilter();
-// articleView.handleMainNav();
+articleView.handleMainNav();
 // articleView.setTeasers();
