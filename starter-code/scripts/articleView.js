@@ -70,11 +70,9 @@ articleView.setTeasers = function() {
   $('.article-body *:nth-of-type(n+2)').hide();
   $('.read-on').on('click', function(eve) {
     eve.preventDefault();
-    $('.read-on').toggle();
-    $('.article-body *:nth-of-type(n+2)').toggle();
+    $(this).parent().find('.read-on').toggle();
+    $(this).parent().find('.article-body *:nth-of-type(n+2)').toggle();
   });
-
-
 
   /* TODO: Add a delegated event handler to reveal the remaining paragraphs.
     When a .read-on link is clicked, we can:
