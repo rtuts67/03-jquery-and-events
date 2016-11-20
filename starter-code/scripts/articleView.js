@@ -70,8 +70,8 @@ articleView.setTeasers = function() {
   $('.article-body *:nth-of-type(n+2)').hide();
   $('.read-on').on('click', function(eve) {
     eve.preventDefault();
-    $('.read-on').text('Show less →');
-    $('.article-body *:nth-of-type(n+2)').show();
+    $('.read-on').toggle();
+    $('.article-body *:nth-of-type(n+2)').toggle();
   });
 
 
