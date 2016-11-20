@@ -54,10 +54,8 @@ articleView.handleCategoryFilter = function() {
 
 articleView.handleMainNav = function() {
   $('.main-nav').on('click', '.tab', function() {
-    console.log($(this));
     $('.tab-content').hide();
     $(`#${$(this).data('content')}`).fadeIn();
-
 
     /* TODO:
       1. Hide all of the .tab-content sections
@@ -70,6 +68,14 @@ articleView.handleMainNav = function() {
 
 articleView.setTeasers = function() {
   $('.article-body *:nth-of-type(n+2)').hide();
+  $('.read-on').on('click', function(eve) {
+    eve.preventDefault();
+    $('.read-on').text('Show less →');
+    $('.article-body *:nth-of-type(n+2)').show();
+  });
+
+
+
   /* TODO: Add a delegated event handler to reveal the remaining paragraphs.
     When a .read-on link is clicked, we can:
     1. Prevent the defaul actionof a link.
@@ -86,4 +92,4 @@ articleView.populateFilters();
 articleView.handleAuthorFilter();
 articleView.handleCategoryFilter();
 articleView.handleMainNav();
-// articleView.setTeasers();
+articleView.setTeasers();

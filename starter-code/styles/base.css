@@ -38,3 +38,11 @@ a:hover, a:focus {
 
 a:visited {
 }
+
+/*#readOn {
+  display: block;
+}*/
+
+#showLess {
+  display: none;
+}
